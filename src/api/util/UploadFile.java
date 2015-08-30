@@ -32,8 +32,8 @@ public class UploadFile extends HttpServlet {
 		SITE, MINISITE, ACCOUNT, BACKGROUND
 	}
 	
-	private static int MAX_FILE_SIZE = 100 * 1024;
-	private static int MAX_MEM_SIZE = 50 * 1024;
+	private static int MAX_FILE_SIZE = 5 * 1024 * 1024;
+	private static int MAX_MEM_SIZE = 5 * 1024 * 1024;
 	
 	private String ROOT;
 	private static String TEMP_PATH = "data/temp/";

@@ -23,8 +23,8 @@ import api.ret.obj.UsersNumber;
 import dal.DBUtil;
 import entity.Account;
 import entity.City;
-import entity.CommentForMinisite;
-import entity.CommentForSite;
+import entity.MinisiteComment;
+import entity.SiteComment;
 import entity.Minisite;
 import entity.PictureForMinisite;
 import entity.PictureForSite;
@@ -324,8 +324,8 @@ public class BizUtil {
 				
 		SiteCommentList siteCommentList = new SiteCommentList();
 		
-		ArrayList<CommentForSite> list = DBUtil.getSiteComments(siteId, size, offset);
-		for (CommentForSite comment : list) {
+		ArrayList<SiteComment> list = DBUtil.getSiteComments(siteId, size, offset);
+		for (SiteComment comment : list) {
 			siteCommentList.addSiteCommnet(comment);
 		}
 		
@@ -343,8 +343,8 @@ public class BizUtil {
 		
 		MinisiteCommentList minisiteCommentList = new MinisiteCommentList();
 		
-		ArrayList<CommentForMinisite> list = DBUtil.getMinisiteComments(minisiteId, size, offset);
-		for (CommentForMinisite comment : list) {
+		ArrayList<MinisiteComment> list = DBUtil.getMinisiteComments(minisiteId, size, offset);
+		for (MinisiteComment comment : list) {
 			minisiteCommentList.addMinisiteComment(comment);
 		}
 		

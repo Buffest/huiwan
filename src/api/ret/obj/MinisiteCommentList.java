@@ -2,21 +2,21 @@ package api.ret.obj;
 
 import java.util.ArrayList;
 
-import entity.CommentForMinisite;
+import entity.MinisiteComment;
 
 public class MinisiteCommentList extends RetObjBase {
 
-	ArrayList<CommentForMinisite> minisiteCommentList = new ArrayList<CommentForMinisite>();
+	ArrayList<MinisiteComment> minisiteCommentList = new ArrayList<MinisiteComment>();
 
-	public ArrayList<CommentForMinisite> getMinisiteCommentList() {
+	public ArrayList<MinisiteComment> getMinisiteCommentList() {
 		return minisiteCommentList;
 	}
 
-	public void setMinisiteCommentList(ArrayList<CommentForMinisite> minisiteCommentList) {
+	public void setMinisiteCommentList(ArrayList<MinisiteComment> minisiteCommentList) {
 		this.minisiteCommentList = minisiteCommentList;
 	}
 	
-	public void addMinisiteComment(CommentForMinisite comment) {
+	public void addMinisiteComment(MinisiteComment comment) {
 		this.minisiteCommentList.add(comment);
 	}
 }
