@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import entity.*;
 
 public class DBUtil {
-
+	
 	public static Connection getConnection() {
 		
 		Connection conn = null;
