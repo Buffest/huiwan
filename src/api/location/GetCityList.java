@@ -36,6 +36,9 @@ public class GetCityList extends HttpServlet {
 		String sizeStr = request.getParameter("size");
 		String offsetStr = request.getParameter("offset");
 		
+		System.out.println(sizeStr);
+		System.out.println(offsetStr);
+		
 		if (sizeStr == null || sizeStr.isEmpty()) {
 			HttpUtil.errorRespond(response, RetCode.BAD_REQUEST, 
 					ErrMsg.SIZE_NULL);

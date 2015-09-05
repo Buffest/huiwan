@@ -1,7 +1,6 @@
 package entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.ArrayList;
 import entity.PictureForMinisite;
 

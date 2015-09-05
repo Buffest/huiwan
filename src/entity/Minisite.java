@@ -1,9 +1,5 @@
 package entity;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
-
 public class Minisite {
 
 	private long id;

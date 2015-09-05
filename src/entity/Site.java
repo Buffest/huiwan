@@ -1,8 +1,5 @@
 package entity;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 public class Site {
 	
 	private long id;
