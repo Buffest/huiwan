@@ -254,19 +254,19 @@ public class DBUtil {
 	 * @param newPassword String; new password
 	 * @return void
 	 */
-	public static void resetLoginPwd(String telephone, String newPassword){
+	public static void resetLoginPwd(long uid, String newPassword){
 		
 		PreparedStatement stmt = null;
         
 		Connection conn = DBUtil.getConnection();
 		String sql = "update account "+
 				"set password = ? "+
-				"where telephone = ?;";
+				"where user_id = ?;";
 		
 		try {
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, newPassword);
-			stmt.setString(2, telephone);
+			stmt.setLong(2, uid);
 			
 			stmt.executeUpdate();
 			
@@ -732,51 +732,6 @@ public class DBUtil {
 
 	
 	/**
-	 * getPictureForSiteByCommentId
-	 * @param commentId comment_id
-	 * @return ArrayList of PictureForSite
-	 */
-	public static ArrayList<PictureForSite> getPictureForSiteByCommentId(long commentId) {
-		
-		PreparedStatement stmt = null;
-        
-		Connection conn = DBUtil.getConnection();
-		String sql = "select picture_path, size, time, id, user_id, site_id "+ 
-					"from pictureforsitecomment "+
-					"where siteComment_id = ?; ";
-		
-		ArrayList<PictureForSite> result = new ArrayList<PictureForSite>();
-		try {
-			stmt = conn.prepareStatement(sql);
-			stmt.setLong(1, commentId);
-			
-			ResultSet rs = stmt.executeQuery();
-			
-			while(rs.next()) {
-				PictureForSite t = new PictureForSite();
-				
-				t.setPicPath(rs.getString(1));
-				t.setSize(rs.getFloat(2));
-				t.setTime(rs.getTimestamp(3));
-				t.setId(rs.getLong(4));
-				t.setUserId(rs.getLong(5));
-				t.setSiteId(rs.getLong(6));
-				t.setSiteCommentId(commentId);
-				
-				result.add(t);
-			}
-			
-			DBUtil.close(conn, stmt, rs);
-			
-		} catch (SQLException e) {
-			System.out.println("Something error in getPictureForSiteByCommentId");
-		}
-		
-		
-		return result;
-	}
-	
-	/**
 	 * getPictureForSiteByUserId
 	 * @param userId user_id
 	 * @return ArrayList of PictureForSite for picture path
@@ -898,6 +853,7 @@ public class DBUtil {
 				t.setNickname(rs.getString(4));
 				t.setUserIcon(rs.getString(5));
 				t.setId(rs.getLong(6));
+				t.setMinisiteId(minisiteId);
 				
 				result.add(t);
 			}
@@ -950,6 +906,51 @@ public class DBUtil {
 	}
 	
 	/**
+	 * getPictureForSiteByCommentId
+	 * @param commentId comment_id
+	 * @return ArrayList of PictureForSite
+	 */
+	public static ArrayList<PictureForSite> getPictureForSiteByCommentId(long commentId) {
+		
+		PreparedStatement stmt = null;
+	    
+		Connection conn = DBUtil.getConnection();
+		String sql = "select picture_path, size, time, id, user_id, site_id "+ 
+					"from pictureforsitecomment "+
+					"where siteComment_id = ?; ";
+		
+		ArrayList<PictureForSite> result = new ArrayList<PictureForSite>();
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setLong(1, commentId);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				PictureForSite t = new PictureForSite();
+				
+				t.setPicPath(rs.getString(1));
+				t.setSize(rs.getFloat(2));
+				t.setTime(rs.getTimestamp(3));
+				t.setId(rs.getLong(4));
+				t.setUserId(rs.getLong(5));
+				t.setSiteId(rs.getLong(6));
+				t.setSiteCommentId(commentId);
+				
+				result.add(t);
+			}
+			
+			DBUtil.close(conn, stmt, rs);
+			
+		} catch (SQLException e) {
+			System.out.println("Something error in getPictureForSiteByCommentId");
+		}
+		
+		
+		return result;
+	}
+
+	/**
 	 * getPictureForMinisiteByCommentId
 	 * @param commentId comment_id
 	 * @return ArrayList of PictureForMinisite
@@ -959,7 +960,7 @@ public class DBUtil {
 		PreparedStatement stmt = null;
         
 		Connection conn = DBUtil.getConnection();
-		String sql = "select picture_path, size, time "+ 
+		String sql = "select picture_path, size, time, id, user_id, minisite_id "+ 
 					"from pictureforminisitecomment "+
 					"where minisiteComment_id = ?; ";
 		
@@ -976,6 +977,9 @@ public class DBUtil {
 				t.setPicPath(rs.getString(1));
 				t.setSize(rs.getFloat(2));
 				t.setTime(rs.getTimestamp(3));
+				t.setId(rs.getLong(4));
+				t.setUserId(rs.getLong(5));
+				t.setMinisiteId(rs.getLong(6));
 				t.setMinisiteCommentId(commentId);
 				
 				result.add(t);

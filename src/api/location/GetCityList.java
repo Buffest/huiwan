@@ -2,7 +2,6 @@ package api.location;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +15,6 @@ import bll.HttpUtil;
 /**
  * Servlet implementation class GetCityList
  */
-@WebServlet("/api/location/getCityList")
 public class GetCityList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,10 +33,7 @@ public class GetCityList extends HttpServlet {
 
 		String sizeStr = request.getParameter("size");
 		String offsetStr = request.getParameter("offset");
-		
-		System.out.println(sizeStr);
-		System.out.println(offsetStr);
-		
+				
 		if (sizeStr == null || sizeStr.isEmpty()) {
 			HttpUtil.errorRespond(response, RetCode.BAD_REQUEST, 
 					ErrMsg.SIZE_NULL);

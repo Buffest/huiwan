@@ -2,7 +2,6 @@ package api.account;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +14,6 @@ import bll.HttpUtil;
 /**
  * Servlet implementation class ResetLoginPwd
  */
-@WebServlet("/api/account/resetLoginPwd")
 public class ResetLoginPwd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,14 +30,8 @@ public class ResetLoginPwd extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String telephone = request.getParameter("telephone");
+		String uidStr = request.getParameter("uid");
 		String newPassword = request.getParameter("newPassword");
-		
-		if (telephone == null || telephone.isEmpty()) {
-			HttpUtil.errorRespond(response, RetCode.BAD_REQUEST, 
-					ErrMsg.TELEPHONE_NULL);
-			return;
-		}
 		
 		if (newPassword == null || newPassword.isEmpty()) {
 			HttpUtil.errorRespond(response, RetCode.BAD_REQUEST, 
@@ -47,13 +39,8 @@ public class ResetLoginPwd extends HttpServlet {
 			return;
 		}
 		
-		if (!BizUtil.checkUser(telephone)) {
-			HttpUtil.errorRespond(response, RetCode.NOT_FOUND, 
-					ErrMsg.USER_NOT_EXIST);
-			return;
-		}
-		
-		BizUtil.resetLoginPwd(telephone, newPassword);
+		long uid = Long.parseLong(uidStr);
+		BizUtil.resetLoginPwd(uid, newPassword);
 		
 		HttpUtil.normalRespond(response, RetCode.SUCCESS, null);
 	}

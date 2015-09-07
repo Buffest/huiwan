@@ -22,5 +22,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/Buffer/Documents/Code/eclipseEE workspace/huiwan/WebContent/WEB-INF/lib/jedis-2.7.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Buffer/Documents/Code/eclipseEE workspace/huiwan/WebContent/WEB-INF/lib/commons-pool2-2.4.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

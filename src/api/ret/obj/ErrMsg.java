@@ -9,10 +9,12 @@ public class ErrMsg extends RetObjBase {
 	public static String PLAN_ALREADY_EXIST = "想去列表中已有该项";
 	public static String MINISITE_COLLECT_NOT_EXIST = "景点收藏中没有该项";
 	public static String MINISITE_COLLECT_ALREADY_EXIST = "景点收藏中已有该项";
+	public static String USER_NOT_LOGIN = "用户未登陆";
 	
 	public static String SIGNUP_ERROR = "注册失败";
 	public static String UPDATE_USER_INFO_ERROR = "更新用户信息失败";
 	public static String UPLOAD_FILE_ERROR = "上传文件失败";
+	public static String LOGIN_ERROR = "登录失败";
 
 	public static String TELEPHONE_NULL = "手机号为空";
 	public static String PASSWORD_NULL = "密码为空";

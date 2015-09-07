@@ -24,7 +24,6 @@ import bll.HttpUtil;
 /**
  * Servlet implementation class UploadFile
  */
-@WebServlet("/api/util/uploadFile")
 public class UploadFile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

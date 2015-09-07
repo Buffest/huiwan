@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
 import api.ret.obj.CityIdList;
 import api.ret.obj.CityInfoList;
 import api.ret.obj.CommentsNumber;
+import api.ret.obj.LoginInfo;
 import api.ret.obj.MinisiteCommentList;
 import api.ret.obj.MinisiteInfoList;
 import api.ret.obj.PictureForMinisiteList;
@@ -48,11 +49,18 @@ public class BizUtil {
 	 * @param loginPassword
 	 * @return contains uid if login successfully; contains -1 otherwise
 	 */
-	public static Uid userLogin(String telephone, String loginPassword) {
+	public static LoginInfo userLogin(String telephone, String loginPassword) throws Exception {
 		
 		long uid = DBUtil.userLogin(telephone, loginPassword);
+		String token = BizUtil.getToken(uid, telephone, loginPassword);
 		
-		return new Uid(uid);
+		return new LoginInfo(uid, token);
+	}
+	
+	public static String getToken(long uid, String telephone, String loginPassword) throws Exception{
+		String loginInfo = telephone + loginPassword + uid + System.currentTimeMillis();
+		
+		return BizUtil.calcMd5(loginInfo);
 	}
 	
 	/**
@@ -128,9 +136,9 @@ public class BizUtil {
 	 * @param telephone
 	 * @param newPassword
 	 */
-	public static void resetLoginPwd(String telephone, String newPassword) {
+	public static void resetLoginPwd(long uid, String newPassword) {
 		
-		DBUtil.resetLoginPwd(telephone, newPassword);
+		DBUtil.resetLoginPwd(uid, newPassword);
 		
 		return;
 	}
@@ -526,15 +534,21 @@ public class BizUtil {
 		return usersNumber;
 	}
 	
-	public static String calcMd5(String fileName, long uid, long siteId) throws Exception {
+	public static String calcMd5(String rawStr) throws Exception {
 		
-		String uploadInfo = fileName + uid + siteId + System.currentTimeMillis();
-		byte[] bytesOfUploadInfo = uploadInfo.getBytes("UTF-8");
+		byte[] bytesOfRawStr = rawStr.getBytes("UTF-8");
 		MessageDigest md = MessageDigest.getInstance("MD5");
-		byte[] bytesOfMd5 = md.digest(bytesOfUploadInfo);
+		byte[] bytesOfMd5 = md.digest(bytesOfRawStr);
 		String md5 = (new HexBinaryAdapter()).marshal(bytesOfMd5);
 		
 		return md5;
+	}
+	
+	public static String calcMd5(String fileName, long uid, long siteId) throws Exception {
+		
+		String uploadInfo = fileName + uid + siteId + System.currentTimeMillis();
+		
+		return calcMd5(uploadInfo);
 	}
 	
 	public static String getExtensionName(String filename) {   
