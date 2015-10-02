@@ -31,7 +31,7 @@ public class CommentSite extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+						
 		String siteIdStr = request.getParameter("siteId");
 		String content = request.getParameter("content");
 		String scoreStr = request.getParameter("score");
@@ -74,10 +74,12 @@ public class CommentSite extends HttpServlet {
 			return;
 		}
 		
-		String[] paths = picPathStr.split(";");
 		ArrayList<String> picPath = new ArrayList<String>();
-		for (int i = 0; i < paths.length; i++) {
-			picPath.add(paths[i]);
+		if (picPathStr != null && !picPathStr.isEmpty()) {
+			String[] paths = picPathStr.split(";");
+			for (int i = 0; i < paths.length; i++) {
+				picPath.add(paths[i]);
+			}
 		}
 
 		BizUtil.commentSite(siteId, content, score, uid, picPath);
@@ -89,6 +91,9 @@ public class CommentSite extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		System.out.println(request.getParameter("test"));
+		
 		doGet(request, response);
 	}
 

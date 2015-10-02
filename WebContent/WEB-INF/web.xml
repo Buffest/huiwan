@@ -9,8 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!-- api.account -->
   <servlet>
     <servlet-name>AddMinisiteCollect</servlet-name>
     <servlet-class>api.account.AddMinisiteCollect</servlet-class>
@@ -19,7 +17,6 @@
     <servlet-name>AddMinisiteCollect</servlet-name>
     <url-pattern>/api/account/addMinisiteCollect</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>AddPlan</servlet-name>
     <servlet-class>api.account.AddPlan</servlet-class>
@@ -28,7 +25,6 @@
     <servlet-name>AddPlan</servlet-name>
     <url-pattern>/api/account/addPlan</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>CommentMinisite</servlet-name>
     <servlet-class>api.account.CommentMinisite</servlet-class>
@@ -37,7 +33,6 @@
     <servlet-name>CommentMinisite</servlet-name>
     <url-pattern>/api/account/commentMinisite</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>CommentSite</servlet-name>
     <servlet-class>api.account.CommentSite</servlet-class>
@@ -46,7 +41,6 @@
     <servlet-name>CommentSite</servlet-name>
     <url-pattern>/api/account/commentSite</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>DeleteMinisiteCollect</servlet-name>
     <servlet-class>api.account.DeleteMinisiteCollect</servlet-class>
@@ -55,7 +49,6 @@
     <servlet-name>DeleteMinisiteCollect</servlet-name>
     <url-pattern>/api/account/deleteMinisiteCollect</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>DeletePlan</servlet-name>
     <servlet-class>api.account.DeletePlan</servlet-class>
@@ -64,7 +57,6 @@
     <servlet-name>DeletePlan</servlet-name>
     <url-pattern>/api/account/deletePlan</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetCommentSiteList</servlet-name>
     <servlet-class>api.account.GetCommentSiteList</servlet-class>
@@ -73,7 +65,6 @@
     <servlet-name>GetCommentSiteList</servlet-name>
     <url-pattern>/api/account/getCommentSiteList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetMinisiteCollectList</servlet-name>
     <servlet-class>api.account.GetMinisiteCollectList</servlet-class>
@@ -82,7 +73,6 @@
     <servlet-name>GetMinisiteCollectList</servlet-name>
     <url-pattern>/api/account/getMinisiteCollectList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetPlanList</servlet-name>
     <servlet-class>api.account.GetPlanList</servlet-class>
@@ -91,7 +81,6 @@
     <servlet-name>GetPlanList</servlet-name>
     <url-pattern>/api/account/getPlanList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetUserInfo</servlet-name>
     <servlet-class>api.account.GetUserInfo</servlet-class>
@@ -100,7 +89,6 @@
     <servlet-name>GetUserInfo</servlet-name>
     <url-pattern>/api/account/getUserInfo</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ResetLoginPwd</servlet-name>
     <servlet-class>api.account.ResetLoginPwd</servlet-class>
@@ -109,7 +97,6 @@
     <servlet-name>ResetLoginPwd</servlet-name>
     <url-pattern>/api/account/resetLoginPwd</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Signup</servlet-name>
     <servlet-class>api.account.Signup</servlet-class>
@@ -118,7 +105,6 @@
     <servlet-name>Signup</servlet-name>
     <url-pattern>/api/account/signup</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UpdateUserInfo</servlet-name>
     <servlet-class>api.account.UpdateUserInfo</servlet-class>
@@ -127,7 +113,6 @@
     <servlet-name>UpdateUserInfo</servlet-name>
     <url-pattern>/api/account/updateUserInfo</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UserLogin</servlet-name>
     <servlet-class>api.account.UserLogin</servlet-class>
@@ -136,8 +121,6 @@
     <servlet-name>UserLogin</servlet-name>
     <url-pattern>/api/account/userLogin</url-pattern>
   </servlet-mapping>
-  
-  <!-- api.location -->
   <servlet>
     <servlet-name>GetCitiesInfo</servlet-name>
     <servlet-class>api.location.GetCitiesInfo</servlet-class>
@@ -146,7 +129,6 @@
     <servlet-name>GetCitiesInfo</servlet-name>
     <url-pattern>/api/location/getCitiesInfo</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetCityList</servlet-name>
     <servlet-class>api.location.GetCityList</servlet-class>
@@ -155,7 +137,6 @@
     <servlet-name>GetCityList</servlet-name>
     <url-pattern>/api/location/getCityList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetMinisiteComments</servlet-name>
     <servlet-class>api.location.GetMinisiteComments</servlet-class>
@@ -164,7 +145,6 @@
     <servlet-name>GetMinisiteComments</servlet-name>
     <url-pattern>/api/location/getMinisiteComments</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetMinisiteCommentsNumber</servlet-name>
     <servlet-class>api.location.GetMinisiteCommentsNumber</servlet-class>
@@ -173,7 +153,6 @@
     <servlet-name>GetMinisiteCommentsNumber</servlet-name>
     <url-pattern>/api/location/getMinisiteCommentsNumber</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetMinisiteList</servlet-name>
     <servlet-class>api.location.GetMinisiteList</servlet-class>
@@ -182,7 +161,6 @@
     <servlet-name>GetMinisiteList</servlet-name>
     <url-pattern>/api/location/getMinisiteList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetMinisitesInfo</servlet-name>
     <servlet-class>api.location.GetMinisitesInfo</servlet-class>
@@ -191,7 +169,6 @@
     <servlet-name>GetMinisitesInfo</servlet-name>
     <url-pattern>/api/location/getMinisitesInfo</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetPictureForMinisiteByMinisiteId</servlet-name>
     <servlet-class>api.location.GetPictureForMinisiteByMinisiteId</servlet-class>
@@ -200,7 +177,6 @@
     <servlet-name>GetPictureForMinisiteByMinisiteId</servlet-name>
     <url-pattern>/api/location/getPictureForMinisiteByMinisiteId</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetPictureForSiteBySiteId</servlet-name>
     <servlet-class>api.location.GetPictureForSiteBySiteId</servlet-class>
@@ -209,7 +185,6 @@
     <servlet-name>GetPictureForSiteBySiteId</servlet-name>
     <url-pattern>/api/location/getPictureForSiteBySiteId</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetSiteComments</servlet-name>
     <servlet-class>api.location.GetSiteComments</servlet-class>
@@ -218,7 +193,6 @@
     <servlet-name>GetSiteComments</servlet-name>
     <url-pattern>/api/location/getSiteComments</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetSiteCommentsNumber</servlet-name>
     <servlet-class>api.location.GetSiteCommentsNumber</servlet-class>
@@ -227,7 +201,6 @@
     <servlet-name>GetSiteCommentsNumber</servlet-name>
     <url-pattern>/api/location/getSiteCommentsNumber</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetSiteList</servlet-name>
     <servlet-class>api.location.GetSiteList</servlet-class>
@@ -236,7 +209,6 @@
     <servlet-name>GetSiteList</servlet-name>
     <url-pattern>/api/location/getSiteList</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetSitesInfo</servlet-name>
     <servlet-class>api.location.GetSitesInfo</servlet-class>
@@ -245,7 +217,6 @@
     <servlet-name>GetSitesInfo</servlet-name>
     <url-pattern>/api/location/getSitesInfo</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetUsersNumberOfMinisite</servlet-name>
     <servlet-class>api.location.GetUsersNumberOfMinisite</servlet-class>
@@ -254,7 +225,6 @@
     <servlet-name>GetUsersNumberOfMinisite</servlet-name>
     <url-pattern>/api/location/getUsersNumberOfMinisite</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>GetUsersNumberOfSite</servlet-name>
     <servlet-class>api.location.GetUsersNumberOfSite</servlet-class>
@@ -263,8 +233,6 @@
     <servlet-name>GetUsersNumberOfSite</servlet-name>
     <url-pattern>/api/location/getUsersNumberOfSite</url-pattern>
   </servlet-mapping>
-  
-  <!-- api.util -->
   <servlet>
     <servlet-name>UploadFile</servlet-name>
     <servlet-class>api.util.UploadFile</servlet-class>
@@ -273,17 +241,14 @@
     <servlet-name>UploadFile</servlet-name>
     <url-pattern>/api/util/uploadFile</url-pattern>
   </servlet-mapping>
-  
-  <!-- filter -->
   <filter>
     <filter-name>AuthFilter</filter-name>
     <filter-class>filter.AuthFilter</filter-class>
     <init-param>
       <param-name>test</param-name>
-      <param-value>testValue</param-value>  
+      <param-value>testValue</param-value>
     </init-param>
   </filter>
-  
   <filter-mapping>
     <filter-name>AuthFilter</filter-name>
     <servlet-name>AddMinisiteCollect</servlet-name>
@@ -298,6 +263,5 @@
     <servlet-name>GetUserInfo</servlet-name>
     <servlet-name>ResetLoginPwd</servlet-name>
     <servlet-name>UpdateUserInfo</servlet-name>
-    <servlet-name>UploadFile</servlet-name>
   </filter-mapping>
 </web-app>

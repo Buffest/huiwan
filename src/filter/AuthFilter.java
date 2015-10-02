@@ -30,6 +30,9 @@ public class AuthFilter implements Filter{
 		String uid = request.getParameter("uid");
 		String token = request.getParameter("token");
 		
+		request.setCharacterEncoding("UTF-8");
+		System.out.println(request.getParameter("content"));
+				
 		if (token == null || token.isEmpty() || uid == null || uid.isEmpty()) {
 			HttpUtil.errorRespond((HttpServletResponse)response, RetCode.BAD_REQUEST, ErrMsg.USER_NOT_LOGIN);
 			return;

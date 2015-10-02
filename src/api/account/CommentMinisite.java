@@ -66,8 +66,13 @@ public class CommentMinisite extends HttpServlet {
 			return;
 		}
 		
-		String[] paths = picPathStr.split(";");
-		ArrayList<String> picPath = (ArrayList<String>) Arrays.asList(paths);
+		ArrayList<String> picPath = new ArrayList<String>();
+		if (picPathStr != null && !picPathStr.isEmpty()) {
+			String[] paths = picPathStr.split(";");
+			for (int i = 0; i < paths.length; i++) {
+				picPath.add(paths[i]);
+			}
+		}
 		
 		//int optRet = BizUtil.commentMinisite(minisiteId, content, uid, picPath);
 		BizUtil.commentMinisite(minisiteId, content, uid, picPath);

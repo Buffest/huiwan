@@ -31,7 +31,7 @@ public class UploadFile extends HttpServlet {
 		SITE, MINISITE, ACCOUNT, BACKGROUND
 	}
 	
-	private static int MAX_FILE_SIZE = 5 * 1024 * 1024;
+	private static int MAX_FILE_SIZE = 20 * 1024 * 1024;
 	private static int MAX_MEM_SIZE = 5 * 1024 * 1024;
 	
 	private String ROOT;
@@ -129,11 +129,14 @@ public class UploadFile extends HttpServlet {
     private String getFileName() throws Exception{
     	
     	String fileName = null;
+    	String md5 = null;
     	switch(type) {
     	case SITE:
+    		md5 = BizUtil.calcMd5(fileItem.getName(), uid, siteId);
+    		fileName = md5 + "." + BizUtil.getExtensionName(fileItem.getName());
+    		break;
     	case MINISITE:
-    		// Calculate MD5 according to fileName, time and user info
-        	String md5 = BizUtil.calcMd5(fileItem.getName(), uid, siteId);
+        	md5 = BizUtil.calcMd5(fileItem.getName(), uid, minisiteId);
     		fileName = md5 + "." + BizUtil.getExtensionName(fileItem.getName());
     		break;
     	case ACCOUNT:

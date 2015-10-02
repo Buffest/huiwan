@@ -591,6 +591,7 @@ public class DBUtil {
 	public static int addMinisiteCollect(long minisiteId, long uid) {
 		
 		PreparedStatement stmt = null;
+		System.out.println(minisiteId + ";" + uid);
         
 		Connection conn = DBUtil.getConnection();
 		String sql = "INSERT INTO favoriteminisite(user_id, minisite_id) "
